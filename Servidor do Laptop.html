@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html><head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no">
+        
+        <title>Servidor do Laptop</title>
+        
+        <script src="Servidor%20do%20Laptop_files/jquery.js">
+        </script>
+
+		<style>
+			#info 
+			{
+                font-size: 140%;
+                
+				border: 1px solid #ff4400;
+                padding: 4px;
+                display: none;
+				
+				width: 80%;
+				/* height: 200px; */
+                
+				background-color: #ffff80;
+			}
+            
+            #bot
+            {
+                display: inline;
+            }
+		</style>         
+        
+        <script>
+			function instrucoes()
+			{
+				var x = new XMLHttpRequest();
+				x.onreadystatechange = function()
+			  	{
+			  		if (x.readyState == 4 && x.status == 200)
+			  		{
+                          var info = document.getElementById('info');
+                          info.innerHTML = "<pre>" + x.responseText + "</pre>";
+                          //info.style.display = 'inline';
+                          
+                          $("#info").fadeIn();
+					}			  
+			  	};
+				  
+				x.open("GET", "instrucao.txt", true);
+				x.send();
+			}
+		</script>
+        
+    </head>
+
+    <body>
+        
+        <center>
+            <h1>Servidor do Laptop</h1>
+        
+            <p>
+                OK, está <font color="red">funcionando</font>!
+            </p>
+            
+            <hr>
+            
+            <p>&nbsp;</p>
+            <a href="http://172.16.11.178/alunos/">Pasta dos Alunos</a>
+            
+            <p>&nbsp;</p>
+            <button id="bot" onclick="instrucoes()">Instruções</button>
+		    <p>
+		    </p><div id="info"></div>
+
+        </center>        
+        
+                
+    
+
+</body></html>

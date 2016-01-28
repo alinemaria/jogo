@@ -1,0 +1,45 @@
+<html>
+
+<head>
+<meta charset="UTF-8"/>
+</head>
+
+<body>
+
+<script>
+var n = 0;
+var nome;
+var n1;
+var n2;
+var n3;
+var n4;
+var media;
+
+function ImprimirDados(){
+
+document.white("Nome: "+nome);
+document.white("Média: "+media);
+}
+
+
+do{
+nome = prompt("Digite o nome do aluno: ");
+n1 = prompt("nota1: ");
+n2 = prompt("nota2: ");
+n3 = prompt("nota3: ");
+n4 = prompt("nota4: ");
+media = (n1 + n2 + n3 + n4)/4;
+//ImprimirDados();
+document.write(nome+" , "+media);
+n++;
+}while(n<10);
+
+
+
+
+
+</script>
+
+</body>
+
+</html>
